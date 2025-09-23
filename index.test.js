@@ -1,6 +1,7 @@
 import { capitalize } from "./modules/capitalize";
 import { reverseString } from "./modules/reverseString";
 import { calculator } from "./modules/calculator";
+import { caeserCipher } from "./modules/caeserCipher";
 
 test("capitalize first letter of hello", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -72,4 +73,16 @@ test("divide 10 and 2", () => {
 
 test("divide 6 and 1", () => {
   expect(calculator.divide(6, 1)).toBe(6);
+});
+
+test("cipher 'xyz'", () => {
+  expect(caeserCipher("xyz", 3)).toBe("abc");
+});
+
+test("cipher 'HeLLo' ", () => {
+  expect(caeserCipher("HeLLo", 3)).toBe("KhOOr");
+});
+
+test("cipher 'Hello, World!'", () => {
+  expect(caeserCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
