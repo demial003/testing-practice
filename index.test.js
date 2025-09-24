@@ -86,3 +86,11 @@ test("cipher 'HeLLo' ", () => {
 test("cipher 'Hello, World!'", () => {
   expect(caeserCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
+
+test("cipher 'abc' with negative shift", () => {
+  expect(caeserCipher("abc", -3)).toBe("xyz");
+});
+
+test("cipher 'abc' with negative shift", () => {
+  expect(caeserCipher("ABC", -3)).toBe("XYZ");
+});
