@@ -2,6 +2,7 @@ import { capitalize } from "./modules/capitalize";
 import { reverseString } from "./modules/reverseString";
 import { calculator } from "./modules/calculator";
 import { caeserCipher } from "./modules/caeserCipher";
+import { analyzeArray } from "./modules/analyzeArray";
 
 test("capitalize first letter of hello", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -93,4 +94,31 @@ test("cipher 'abc' with negative shift", () => {
 
 test("cipher 'abc' with negative shift", () => {
   expect(caeserCipher("ABC", -3)).toBe("XYZ");
+});
+
+test("analyze basic array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toStrictEqual({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
+});
+
+test("analyze basic array", () => {
+  expect(analyzeArray([1, 1, 1, 1, 1])).toStrictEqual({
+    average: 1,
+    min: 1,
+    max: 1,
+    length: 5,
+  });
+});
+
+test("analyze basic array", () => {
+  expect(analyzeArray([2, 2, 2, 2, 2])).toStrictEqual({
+    average: 2,
+    min: 2,
+    max: 2,
+    length: 5,
+  });
 });
